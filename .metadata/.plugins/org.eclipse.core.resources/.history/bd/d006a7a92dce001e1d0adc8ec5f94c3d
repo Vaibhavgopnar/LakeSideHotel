@@ -1,0 +1,35 @@
+package com.dailycode.LakeSidehotel.model;
+
+import java.time.LocalDate;
+
+public class BookedRoom {
+
+	private Long bookingId;
+	private LocalDate checkInDate;
+	private LocalDate checkOutDate;
+	private String guestFullName;
+	private String guestEmail;
+	private int NumOfAdults;
+	private int NumOfChildrens;
+	private int totalNumOfGuest;
+	private String bookingConfermationCode;
+	private Room room;
+	
+	
+	public void calculateTotalNumOfGuest() {
+		this.totalNumOfGuest = this.NumOfAdults + this.NumOfChildrens;
+	}
+
+	public void setNumOfAdults(int numOfAdults) {
+		NumOfAdults = numOfAdults;
+		calculateTotalNumOfGuest();
+	}
+
+	public void setNumOfChildrens(int numOfChildrens) {
+		NumOfChildrens = numOfChildrens;
+		calculateTotalNumOfGuest();
+	}
+	
+	
+		
+}
